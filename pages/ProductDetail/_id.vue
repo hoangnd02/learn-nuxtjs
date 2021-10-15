@@ -29,29 +29,10 @@ import Product from '../../type/index'
 
 @Component({})
 export default class id extends Vue {
-    product: Product = { 
-        id: 0, 
-        type: "", 
-        name: "", 
-        description: "", 
-        price: 0, 
-        "discount_percentage": "", 
-        "stock_left": "", 
-        special: true, 
-        "view_count": 0
+    async asyncData({ params, $axios }: { params: any, $axios: any }) {
+      const product: Product = await $axios.$get(`http://localhost:3000/api/v2/public/products/${params.id}`)
+      return { product }
     }
-    
-    async fetch() {
-        try {
-            const {
-                data
-            } = await this.$axios(`http://localhost:3000/api/v2/public/products/${this.$route.params.id}`)
-            this.product = data
-        } catch (error) {
-            return error
-        }
-    }
-
 }
 </script>
 
