@@ -7,12 +7,12 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import ListProduct from '../components/ListProduct.vue'
-import product from '../type'
+import Product from '../type'
 
 @Component({
   components: { ListProduct },})
 export default class Index extends Vue {
-  products: product[] = []
+  products: Product[] = []
 
   async fetch() {
     try {

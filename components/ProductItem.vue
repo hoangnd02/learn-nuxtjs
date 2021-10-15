@@ -1,10 +1,13 @@
 <template>
-<div class="product-item"><a :href="'/ProductDetail/' + product.id" class="product-item-image">
-    <img :src="'https://learn.huuhait.me/api/v2/public/products/'+ product.id +'/image'">
+<div class="product-item">
+    <nuxt-link :to="'/ProductDetail/' + product.id" class="product-item-image">
+        <img :src="'https://learn.huuhait.me/api/v2/public/products/'+ product.id +'/image'">
       <div class="box-see"> XEM CHI TIẾT </div>
-    </a>
+    </nuxt-link>
     <div class="product-item-details">
-      <a :href="'/ProductDetail/' + product.id" class="product-item-name">{{product.name}} </a>
+      <nuxt-link :to="'/ProductDetail/' + product.id" class="product-item-name">
+        {{product.name}}
+      </nuxt-link>
       <div class="product-item-price has-discount">
         {{product.price}}
         <span class="default-price">{{product.price}}</span>
@@ -19,14 +22,14 @@ import {
     Prop,
     Vue
 } from "nuxt-property-decorator"
-import product from "../type";
+import Product from "../type";
 
 @Component({
     components: {
     },
 })
-export default class Product extends Vue {
-  @Prop() product: product;
+export default class ProductItem extends Vue {
+  @Prop() product: Product;
 }
 </script>
 

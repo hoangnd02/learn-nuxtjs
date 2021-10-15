@@ -1,6 +1,6 @@
 <template>
 <div class="list-product">
-  <product v-for="product in products" :key="product.id"  :product="product"/>
+  <product-item v-for="product in products" :key="product.id"  :product="product"/>
 </div>
 </template>
 
@@ -10,16 +10,16 @@ import {
     Prop,
     Vue
 } from "nuxt-property-decorator"
-import product from "../type";
-import Product from './Product.vue';
+import Product from "../type";
+import ProductItem from './ProductItem.vue';
 
 @Component({
     components: {
-      Product
+      ProductItem
     },
 })
 export default class ListProduct extends Vue {
-  @Prop() products: product[];
+  @Prop() products: Product[];
 }
 </script>
 
