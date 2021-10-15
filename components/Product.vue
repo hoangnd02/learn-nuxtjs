@@ -19,13 +19,14 @@ import {
     Prop,
     Vue
 } from "nuxt-property-decorator"
+import product from "../type";
 
 @Component({
     components: {
     },
 })
 export default class Product extends Vue {
-  @Prop() product: any;
+  @Prop() product: product;
 }
 </script>
 

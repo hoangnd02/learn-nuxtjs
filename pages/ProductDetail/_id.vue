@@ -25,10 +25,22 @@ import {
     Component,
     Vue
 } from "nuxt-property-decorator"
+import product from '../../type/index'
 
 @Component({})
 export default class id extends Vue {
-    product: Object = {}
+    product: product = { 
+        id: 0, 
+        type: "", 
+        name: "", 
+        description: "", 
+        price: 0, 
+        "discount_percentage": "", 
+        "stock_left": "", 
+        special: true, 
+        "view_count": 0
+    }
+    
     async fetch() {
         try {
             const {

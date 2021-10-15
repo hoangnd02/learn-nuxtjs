@@ -10,6 +10,7 @@ import {
     Prop,
     Vue
 } from "nuxt-property-decorator"
+import product from "../type";
 import Product from './Product.vue';
 
 @Component({
@@ -18,7 +19,7 @@ import Product from './Product.vue';
     },
 })
 export default class ListProduct extends Vue {
-  @Prop() products: any;
+  @Prop() products: product[];
 }
 </script>
 
