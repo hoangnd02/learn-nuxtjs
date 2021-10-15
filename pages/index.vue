@@ -14,6 +14,12 @@ import Product from '../type'
 export default class Index extends Vue {
   products: Product[] = []
 
+  head() {
+    return {
+      title: "Danh sách sản phẩm"
+    };
+  }
+
   async fetch() {
     try {
       const { data } = await this.$axios(

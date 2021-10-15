@@ -29,6 +29,13 @@ import Product from '../../type/index'
 
 @Component({})
 export default class id extends Vue {
+
+    head() {    
+        return {
+            title: "Lắc tay fake giá rẻ"
+        };
+    }
+    
     async asyncData({ params, $axios }: { params: any, $axios: any }) {
       const product: Product = await $axios.$get(`http://localhost:3000/api/v2/public/products/${params.id}`)
       return { product }
