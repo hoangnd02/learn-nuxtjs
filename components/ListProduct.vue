@@ -23,7 +23,7 @@ export default class ListProduct extends Vue {
 }
 </script>
 
-<style lang="css">
+<style lang="less">
 .list-product {
     display: flex;
     flex-wrap: wrap;

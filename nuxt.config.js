@@ -64,5 +64,14 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    loaders: {
+      less: {
+        lessOptions: {
+          modifyVars: {},
+          javascriptEnabled: true,
+        },
+      },
+    },
+  },
 }
