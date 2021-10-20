@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header/>
     <list-product :products="products"/>
   </div>
 </template>
@@ -7,10 +8,11 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import ListProduct from '../components/ListProduct.vue'
+import Header from '../components/Header.vue'
 import Product from '../type'
 
 @Component({
-  components: { ListProduct },})
+  components: { ListProduct, Header },})
 export default class Index extends Vue {
   products: Product[] = []
 
