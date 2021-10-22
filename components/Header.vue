@@ -13,7 +13,7 @@
                 <nuxt-link to="/product-list" class="header-nav-item">
                     DANH MỤC
                 </nuxt-link>
-                <template v-if="user == ''">
+                <template v-if="user == '' ">
                    <router-link to="/login" class="header-nav-item">
                         <a-button>Đăng nhập</a-button>
                     </router-link>
@@ -43,6 +43,8 @@ import {
     Component
 } from 'vue-property-decorator';
 import store from "../controllers/store";
+import Cookies from 'js-cookie'
+
 
 @Component
 export default class Header extends Vue {
@@ -57,6 +59,7 @@ export default class Header extends Vue {
       await this.$axios.post('http://localhost:3000/api/v2/identity/logout');
       store.value.user = ""
       this.user = store.value.user
+      Cookies.remove('session_id')
     }
 }
 </script>
