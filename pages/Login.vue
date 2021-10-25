@@ -17,15 +17,11 @@ import {
     Vue,
     Mixins
 } from 'vue-property-decorator'
-import AuthForm from '../layouts/Auth/Form.vue'
-import AuthInput from '../layouts/Auth/Input.vue'
+
 import { AuthMixin } from '../mixins/auth'
 
 @Component({
-    components: {
-        AuthForm,
-        AuthInput,
-    },
+    components: {},
 })
 export default class Login extends Mixins(AuthMixin) {}
 </script>

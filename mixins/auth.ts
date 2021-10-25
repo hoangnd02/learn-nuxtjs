@@ -1,7 +1,12 @@
 import { Vue, Component } from 'vue-property-decorator';
+import AuthForm from '../layouts/Auth/Form.vue'
+import AuthInput from '../layouts/Auth/Input.vue'
 
 @Component({
-  components: {},
+  components: {
+    AuthForm,
+    AuthInput,
+  },
 })
 export class AuthMixin extends Vue {
   email = ''
