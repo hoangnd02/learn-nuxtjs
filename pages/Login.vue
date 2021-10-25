@@ -14,12 +14,12 @@
 <script lang="ts">
 import {
     Component,
-    Vue
+    Vue,
+    Mixins
 } from 'vue-property-decorator'
 import AuthForm from '../layouts/Auth/Form.vue'
 import AuthInput from '../layouts/Auth/Input.vue'
-import store from '../controllers/store'
-import Cookies from 'js-cookie'
+import { AuthMixin } from '../mixins/auth'
 
 @Component({
     components: {
@@ -27,20 +27,7 @@ import Cookies from 'js-cookie'
         AuthInput,
     },
 })
-export default class Login extends Vue {
-    email = ''
-    password = ''
-
-    async login() {
-        if (this.email.length === 0) return
-        if (this.password.length === 0) return
-
-        const { data } = await this.$axios.post('http://localhost:3000/api/v2/identity/login',
-        { email: this.email, password: this.password });
-        
-        this.$router.push({ path: '/' })
-    }
-}
+export default class Login extends Mixins(AuthMixin) {}
 </script>
 
 <style lang="less">
